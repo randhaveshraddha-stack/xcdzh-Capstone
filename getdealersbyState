@@ -1,0 +1,3 @@
+curl "http://localhost:3030/dealerships/get?state=Kansas"
+
+[{"id": 2, "city": "Overland Park", "state": "Kansas", "st": "KS", "address": "145 Carrier Ave", "zip": "66210", "lat": 38.9822, "long": -94.6708, "short_name": "Kansas Motors", "full_name": "Kansas Motors Dealership"}]
