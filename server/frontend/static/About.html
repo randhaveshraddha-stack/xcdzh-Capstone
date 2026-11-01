@@ -1,20 +1,86 @@
 <!DOCTYPE html>
-html>
+<html>
 <head>
-    <title>About Us - Cars Dealership</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>About Us - Car Dealership</title>
+  <!-- Required Stylesheet Links -->
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
 </head>
 <body>
-    <div class="card" style="width: 50%; margin: auto; padding: 20px;">
-        <h1>About Us</h1>
-        <p>Welcome to Cars Dealership, your trusted national car retailer in the U.S.</p>
-        <h2>Our Team</h2>
-        <div class="team-member">
-            <h3>Ritik Varma</h3>
-            <p>Role: Lead Full-Stack Developer</p>
-            <p>Details: Passionate about data analytics, cybersecurity, and scalable web apps.</p>
-            <p>Email: ritik@cardealership.com</p>
-        </div>
+
+  <!-- Navigation bar (if part of your template structure) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Dealership Application</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
+
+  <div class="container mt-5">
+    <!-- Dealership Description / Overview -->
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>About Us</h1>
+        <p class="lead mt-3">
+          Welcome to our Car Dealership application! We are dedicated to providing the best selection of vehicles, transparent pricing, and exceptional customer service. Our mission is to connect drivers with their dream cars seamlessly, offering a wide variety of makes and models tailored to every lifestyle and budget.
+        </p>
+      </div>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Team Members Section (Requires 3 complete member cards) -->
+    <div class="row text-center">
+      <h2 class="mb-4">Our Team</h2>
+
+      <!-- Team Member 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="Team Member 1">
+          <div class="card-body">
+            <h5 class="card-title">Alice Johnson</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Lead Developer</h6>
+            <p class="card-text">Alice oversees the technical architecture and full-stack implementation of our dealership platform.</p>
+            <p class="text-primary font-weight-bold">alice.johnson@dealership.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="Team Member 2">
+          <div class="card-body">
+            <h5 class="card-title">Michael Smith</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Operations Manager</h6>
+            <p class="card-text">Michael manages inventory tracking, vehicle logistics, and dealer network partnerships.</p>
+            <p class="text-primary font-weight-bold">michael.smith@dealership.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="Team Member 3">
+          <div class="card-body">
+            <h5 class="card-title">Sophia Davis</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Customer Relations</h6>
+            <p class="card-text">Sophia ensures every customer inquiry and feedback review is addressed with top-tier care.</p>
+            <p class="text-primary font-weight-bold">sophia.davis@dealership.com</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>
