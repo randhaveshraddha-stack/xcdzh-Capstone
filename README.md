@@ -1,3 +1,2 @@
 # fullstack_developer_capstone
-
-Project Description: A full-stack car dealership web application built with Django, React, and Python.
+A full-stack web application built for a car dealership using Django, React, and other modern technologies.
