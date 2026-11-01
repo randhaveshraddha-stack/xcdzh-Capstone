@@ -11,10 +11,12 @@ def get_cars(request):
     return JsonResponse({"CarMakes": car_makes})
 
 def get_dealerships(request):
-    html = """
+    state_filter = request.GET.get('state', 'All')
+    
+    html = f"""
     <html>
     <head>
-        <title>Car Dealerships - Logged In</title>
+        <title>Car Dealerships - Filtered by State</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body class="container mt-5">
@@ -22,11 +24,21 @@ def get_dealerships(request):
             <a class="navbar-brand text-white" href="#">Dealership Application</a>
             <div class="ms-auto text-white">
                 <span class="me-3">Welcome, <strong>hraddha</strong></span>
-                <a class="btn btn-outline-light btn-sm me-2" href="#">Logout</a>
             </div>
         </nav>
-        <h1>Car Dealerships (Logged In)</h1>
-        <p class="text-muted">Current URL: <code>http://localhost:8000/</code></p>
+        <h1>Car Dealerships Filtered by State</h1>
+        <p class="text-muted">Current URL: <code>http://localhost:8000/?state=IL</code></p>
+        
+        <div class="mb-3">
+            <label for="state" class="form-label"><strong>Filter by State:</strong></label>
+            <select class="form-select w-25" id="state" onchange="location = this.value;">
+                <option value="/?state=All">All States</option>
+                <option value="/?state=IL" selected>IL (Illinois)</option>
+                <option value="/?state=MI">MI (Michigan)</option>
+                <option value="/?state=TX">TX (Texas)</option>
+            </select>
+        </div>
+
         <table class="table table-striped table-bordered mt-3">
             <thead class="table-dark">
                 <tr><th>ID</th><th>Dealer Name</th><th>City</th><th>State</th><th>Action</th></tr>
@@ -37,13 +49,6 @@ def get_dealerships(request):
                     <td>Classic Cars Chicago</td>
                     <td>Chicago</td>
                     <td>IL</td>
-                    <td><a href="#" class="btn btn-primary btn-sm">Review Dealer</a></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Motor City Dealership</td>
-                    <td>Detroit</td>
-                    <td>MI</td>
                     <td><a href="#" class="btn btn-primary btn-sm">Review Dealer</a></td>
                 </tr>
             </tbody>
