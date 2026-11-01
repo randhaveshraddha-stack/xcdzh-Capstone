@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Us - Cars Dealership</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Contact Us - Car Dealership</title>
+  <!-- Required Stylesheet Links -->
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="About.html">About Us</a>
-        <a href="Contact.html" class="active">Contact Us</a>
-    </nav>
-    <div class="container" style="padding: 20px;">
-        <h1>Contact Us</h1>
-        <p>Get in touch with Cars Dealership for inquiries, vehicle support, or feedback.</p>
-        <h3>Contact Details</h3>
-        <p>Email: support@cardealership.com</p>
-        <p>Phone: +1 (800) 555-CARS</p>
-        <p>Address: 100 Auto Mall Way, Detroit, MI, USA</p>
+
+  <!-- Navigation bar with Contact Us marked as active -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Dealership Application</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Contact Us</h1>
+        <p class="lead mt-3">
+          We would love to hear from you! Reach out to us using any of the contact channels below or visit our office.
+        </p>
+      </div>
+    </div>
+
+    <div class="row mt-4 align-items-center">
+      <!-- Contact Details & Image Section -->
+      <div class="col-md-6 mb-4">
+        <h3>Get in Touch</h3>
+        <p class="mt-3"><strong>Email:</strong> support@cardealership.com</p>
+        <p><strong>Phone:</strong> +1 (800) 555-CAR1</p>
+        <p><strong>Address:</strong> 123 Auto Drive, Suite 400, Motor City, TX 78701</p>
+        <p><strong>Working Hours:</strong> Mon - Sat: 9:00 AM - 7:00 PM</p>
+      </div>
+      <div class="col-md-6 mb-4 text-center">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded shadow" alt="Dealership Customer Support Office">
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
