@@ -45,9 +45,7 @@ def get_dealer_details(request, dealer_id):
     return HttpResponse(f"Dealer Details #{dealer_id}")
 
 def get_dealer_reviews(request, dealer_id):
-    return JsonResponse({"status": 200, "reviews": [
-        {"id": 1, "review": "Fantastic services", "sentiment": "positive", "dealership": dealer_id}
-    ]})
+    return JsonResponse({"status": 200, "reviews": []})
 
 def add_review(request, dealer_id=1):
     html = f"""
