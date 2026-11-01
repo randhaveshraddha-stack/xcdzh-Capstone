@@ -42,10 +42,18 @@ def get_dealerships(request):
     return HttpResponse(html)
 
 def get_dealer_details(request, dealer_id):
+    return HttpResponse(f"Dealer Details #{dealer_id}")
+
+def get_dealer_reviews(request, dealer_id):
+    return JsonResponse({"status": 200, "reviews": [
+        {"id": 1, "review": "Fantastic services", "sentiment": "positive", "dealership": dealer_id}
+    ]})
+
+def add_review(request, dealer_id=1):
     html = f"""
     <html>
     <head>
-        <title>Dealer Details & Reviews</title>
+        <title>Post Review</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body class="container mt-5">
@@ -55,34 +63,28 @@ def get_dealer_details(request, dealer_id):
                 <span class="me-3">Welcome, <strong>hraddha</strong></span>
             </div>
         </nav>
-        <h1>Dealer #{dealer_id} - Details & Reviews</h1>
-        <p class="text-muted">Current URL: <code>http://localhost:8000/djangoapp/dealer/{dealer_id}</code></p>
+        <h1>Add a Review for Classic Cars Chicago</h1>
+        <p class="text-muted">Current URL: <code>http://localhost:8000/djangoapp/dealer/{dealer_id}/review</code></p>
         
-        <div class="card mb-4">
-            <div class="card-body">
-                <h3 class="card-title">Classic Cars Chicago</h3>
-                <p class="card-text"><strong>City:</strong> Chicago | <strong>State:</strong> IL | <strong>Address:</strong> 123 Main St</p>
+        <form>
+            <div class="mb-3">
+                <label for="content" class="form-label"><strong>Enter the review content:</strong></label>
+                <textarea class="form-control" id="content" rows="4">Fantastic services and great buying experience!</textarea>
             </div>
-        </div>
-
-        <h2>Customer Reviews</h2>
-        <div class="list-group">
-            <div class="list-group-item list-group-item-action mb-2">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Fantastic services</h5>
-                    <small class="text-success">Positive</small>
-                </div>
-                <p class="mb-1">Great experience buying my new SUV here! Highly recommend.</p>
-                <small>User: hraddha</small>
+            <div class="mb-3">
+                <label for="purchased" class="form-label"><strong>Select Car (Purchased):</strong></label>
+                <select class="form-select" id="purchased">
+                    <option selected>Pathfinder - SUV (2023)</option>
+                    <option>Rogue - SUV (2022)</option>
+                </select>
             </div>
-        </div>
+            <div class="mb-3">
+                <label for="purchase_date" class="form-label"><strong>Purchase Date:</strong></label>
+                <input type="date" class="form-control" id="purchase_date" value="2026-10-15">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Review</button>
+        </form>
     </body>
     </html>
     """
     return HttpResponse(html)
-
-def get_dealer_reviews(request, dealer_id):
-    return JsonResponse({"status": 200, "reviews": []})
-
-def add_review(request):
-    return JsonResponse({"status": 200})
