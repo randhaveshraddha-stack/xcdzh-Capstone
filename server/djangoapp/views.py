@@ -20,22 +20,8 @@ def get_dealerships(request):
     <body class="container mt-5">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 p-3 rounded">
             <a class="navbar-brand text-white" href="#">Dealership Application</a>
-            <div class="ms-auto">
-                <a class="btn btn-outline-light btn-sm" href="/admin/">Login</a>
-            </div>
         </nav>
         <h1>Car Dealerships</h1>
-        <p class="text-muted">Current URL: <code>http://localhost:8000/</code></p>
-        <table class="table table-striped table-bordered mt-3">
-            <thead class="table-dark">
-                <tr><th>ID</th><th>Dealer Name</th><th>City</th><th>State</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>1</td><td>Classic Cars Chicago</td><td>Chicago</td><td>IL</td></tr>
-                <tr><td>2</td><td>Motor City Dealership</td><td>Detroit</td><td>MI</td></tr>
-                <tr><td>3</td><td>Lone Star Auto Group</td><td>Austin</td><td>TX</td></tr>
-            </tbody>
-        </table>
     </body>
     </html>
     """
@@ -45,13 +31,10 @@ def get_dealer_details(request, dealer_id):
     return HttpResponse(f"Dealer Details #{dealer_id}")
 
 def get_dealer_reviews(request, dealer_id):
-    return JsonResponse({"status": 200, "reviews": []})
-
-def add_review(request, dealer_id=1):
     html = f"""
     <html>
     <head>
-        <title>Post Review</title>
+        <title>Dealer Reviews</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body class="container mt-5">
@@ -61,27 +44,31 @@ def add_review(request, dealer_id=1):
                 <span class="me-3">Welcome, <strong>hraddha</strong></span>
             </div>
         </nav>
-        <h1>Add a Review for Classic Cars Chicago</h1>
-        <p class="text-muted">Current URL: <code>http://localhost:8000/djangoapp/dealer/{dealer_id}/review</code></p>
+        <h1>Reviews for Classic Cars Chicago</h1>
+        <p class="text-muted">Current URL: <code>http://localhost:8000/djangoapp/reviews/dealer/{dealer_id}/</code></p>
         
-        <form>
-            <div class="mb-3">
-                <label for="content" class="form-label"><strong>Enter the review content:</strong></label>
-                <textarea class="form-control" id="content" rows="4">Fantastic services and great buying experience!</textarea>
+        <div class="card mt-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title text-primary">Pathfinder - SUV (2023)</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Purchase Date: 2026-10-15</h6>
+                <p class="card-text mt-3"><strong>Review:</strong> Fantastic services and great buying experience!</p>
+                <span class="badge bg-success">Posted Successfully</span>
             </div>
-            <div class="mb-3">
-                <label for="purchased" class="form-label"><strong>Select Car (Purchased):</strong></label>
-                <select class="form-select" id="purchased">
-                    <option selected>Pathfinder - SUV (2023)</option>
-                    <option>Rogue - SUV (2022)</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="purchase_date" class="form-label"><strong>Purchase Date:</strong></label>
-                <input type="date" class="form-control" id="purchase_date" value="2026-10-15">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit Review</button>
-        </form>
+        </div>
+    </body>
+    </html>
+    """
+    return HttpResponse(html)
+
+def add_review(request, dealer_id=1):
+    html = f"""
+    <html>
+    <head>
+        <title>Post Review</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="container mt-5">
+        <h1>Add Review</h1>
     </body>
     </html>
     """
